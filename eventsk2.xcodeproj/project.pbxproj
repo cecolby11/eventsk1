@@ -39,6 +39,8 @@
 		99182EDF1D47D15D0091FCBF /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99182EDC1D47D15D0091FCBF /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99182EE01D47D15D0091FCBF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99182EDD1D47D15D0091FCBF /* Realm.framework */; };
 		99182EE11D47D15D0091FCBF /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99182EDD1D47D15D0091FCBF /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		998BC2AC1D5D2A110078CE40 /* bluecheetah.png in Resources */ = {isa = PBXBuildFile; fileRef = 998BC2AA1D5D2A110078CE40 /* bluecheetah.png */; };
+		998BC2AD1D5D2A110078CE40 /* redcheetah.png in Resources */ = {isa = PBXBuildFile; fileRef = 998BC2AB1D5D2A110078CE40 /* redcheetah.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +90,8 @@
 		14F53D931D08B27800637DD5 /* ChiLDyB02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChiLDyB02.png; path = images/ChiLDyB02.png; sourceTree = SOURCE_ROOT; };
 		99182EDC1D47D15D0091FCBF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		99182EDD1D47D15D0091FCBF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		998BC2AA1D5D2A110078CE40 /* bluecheetah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluecheetah.png; path = images/bluecheetah.png; sourceTree = "<group>"; };
+		998BC2AB1D5D2A110078CE40 /* redcheetah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redcheetah.png; path = images/redcheetah.png; sourceTree = "<group>"; };
 		99ACBBCE1D4AA43C00B1793D /* Stimuli.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stimuli.swift; path = eventsk2/Stimuli.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 				140A992C1CCEB92B0036E5EC /* monkey purple.png */,
 				14F53D931D08B27800637DD5 /* ChiLDyB02.png */,
 				14CE502F1D1B1DD70078A95D /* NULing.png */,
+				998BC2AA1D5D2A110078CE40 /* bluecheetah.png */,
+				998BC2AB1D5D2A110078CE40 /* redcheetah.png */,
 			);
 			name = imagesandvideos;
 			sourceTree = SOURCE_ROOT;
@@ -257,8 +263,10 @@
 				140A991E1CCEB6200036E5EC /* 2_800_6_4_600_4.mov in Resources */,
 				140A99201CCEB6200036E5EC /* 3_800_4_4_400_6.mov in Resources */,
 				140A992E1CCEB92B0036E5EC /* monkey purple.png in Resources */,
+				998BC2AC1D5D2A110078CE40 /* bluecheetah.png in Resources */,
 				140A991F1CCEB6200036E5EC /* 3_400_8_2_800_6.mov in Resources */,
 				142664621CC8183D00EB8BE6 /* Main.storyboard in Resources */,
+				998BC2AD1D5D2A110078CE40 /* redcheetah.png in Resources */,
 				140A992D1CCEB92B0036E5EC /* monkey orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
