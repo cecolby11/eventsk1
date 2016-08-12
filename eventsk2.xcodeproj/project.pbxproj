@@ -414,7 +414,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eventsk2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = c.colby.eventsk1;
+				PRODUCT_BUNDLE_IDENTIFIER = c.colby.eventsk2;
 				PRODUCT_NAME = eventsk2;
 				PROVISIONING_PROFILE = "";
 			};
@@ -433,7 +433,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eventsk2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = c.colby.eventsk1;
+				PRODUCT_BUNDLE_IDENTIFIER = c.colby.eventsk2;
 				PRODUCT_NAME = eventsk2;
 				PROVISIONING_PROFILE = "";
 			};
