@@ -98,17 +98,17 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     //MARK: Background Animations
     
     func moveRight() {
-        UIView.animateWithDuration(2.2, delay: 0.0, options: .CurveEaseInOut, animations: {
-            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.blueCheetah.center.y)
-            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.redCheetah.center.y)
+        UIView.animateWithDuration(2.2, delay: 0, options: .CurveEaseInOut, animations: {
+            self.blueCheetah.center = CGPointMake(self.view.frame.width/2 + 250, self.blueCheetah.center.y)
+            self.redCheetah.center = CGPointMake(self.view.frame.width/2 + 250, self.redCheetah.center.y)
             }, completion:
             {(complete: Bool) in self.moveLeft()})
     }
     
     func moveLeft() {
         UIView.animateWithDuration(2.2, delay: 0, options: .CurveEaseInOut, animations: {
-            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.blueCheetah.center.y)
-            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.redCheetah.center.y)
+            self.blueCheetah.center = CGPointMake(self.view.frame.width/2 - 250, self.blueCheetah.center.y)
+            self.redCheetah.center = CGPointMake(self.view.frame.width/2 - 250, self.redCheetah.center.y)
             }, completion: {(complete: Bool) in self.moveRight()})
         
     }
@@ -138,9 +138,9 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     
     //MARK: View Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        moveRight()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        moveLeft()
     }
     
     
