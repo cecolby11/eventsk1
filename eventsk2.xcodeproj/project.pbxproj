@@ -18,8 +18,6 @@
 		140A99231CCEB6200036E5EC /* 4_600_4_2_800_6.mov in Resources */ = {isa = PBXBuildFile; fileRef = 140A99191CCEB6200036E5EC /* 4_600_4_2_800_6.mov */; };
 		140A99241CCEB6200036E5EC /* Practice_A.mov in Resources */ = {isa = PBXBuildFile; fileRef = 140A991A1CCEB6200036E5EC /* Practice_A.mov */; };
 		140A99251CCEB6200036E5EC /* Practice_B.mov in Resources */ = {isa = PBXBuildFile; fileRef = 140A991B1CCEB6200036E5EC /* Practice_B.mov */; };
-		140A992D1CCEB92B0036E5EC /* monkey orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 140A992B1CCEB92B0036E5EC /* monkey orange.png */; };
-		140A992E1CCEB92B0036E5EC /* monkey purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 140A992C1CCEB92B0036E5EC /* monkey purple.png */; };
 		142481F51CFA47F500CA8F9F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142481F41CFA47F500CA8F9F /* BackgroundView.swift */; };
 		1426645D1CC8183D00EB8BE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426645C1CC8183D00EB8BE6 /* AppDelegate.swift */; };
 		1426645F1CC8183D00EB8BE6 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426645E1CC8183D00EB8BE6 /* WelcomeController.swift */; };
@@ -32,7 +30,6 @@
 		1477DF5A1CCACEE10013B4B6 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477DF591CCACEE10013B4B6 /* Trial.swift */; };
 		148D11701D17A4410095BD6A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D116F1D17A4410095BD6A /* LoadingViewController.swift */; };
 		14CE50301D1B1DD70078A95D /* NULing.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CE502F1D1B1DD70078A95D /* NULing.png */; };
-		14E444A41CFCC0F00006F22F /* ResponseBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E444A31CFCC0F00006F22F /* ResponseBackground.swift */; };
 		14F53D951D08B27800637DD5 /* ChiLDyB02.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F53D931D08B27800637DD5 /* ChiLDyB02.png */; };
 		990C58BC1D5D1F1B00E53300 /* Stimuli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACBBCE1D4AA43C00B1793D /* Stimuli.swift */; };
 		99182EDE1D47D15D0091FCBF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99182EDC1D47D15D0091FCBF /* RealmSwift.framework */; };
@@ -70,8 +67,6 @@
 		140A99191CCEB6200036E5EC /* 4_600_4_2_800_6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 4_600_4_2_800_6.mov; path = stimuli/4_600_4_2_800_6.mov; sourceTree = SOURCE_ROOT; };
 		140A991A1CCEB6200036E5EC /* Practice_A.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Practice_A.mov; path = stimuli/Practice_A.mov; sourceTree = SOURCE_ROOT; };
 		140A991B1CCEB6200036E5EC /* Practice_B.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Practice_B.mov; path = stimuli/Practice_B.mov; sourceTree = SOURCE_ROOT; };
-		140A992B1CCEB92B0036E5EC /* monkey orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monkey orange.png"; path = "images/monkey orange.png"; sourceTree = SOURCE_ROOT; };
-		140A992C1CCEB92B0036E5EC /* monkey purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monkey purple.png"; path = "images/monkey purple.png"; sourceTree = SOURCE_ROOT; };
 		142481F41CFA47F500CA8F9F /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = eventsk2/BackgroundView.swift; sourceTree = SOURCE_ROOT; };
 		142664591CC8183D00EB8BE6 /* eventsk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventsk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1426645C1CC8183D00EB8BE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = eventsk2/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -86,7 +81,6 @@
 		1477DF591CCACEE10013B4B6 /* Trial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trial.swift; path = eventsk2/Trial.swift; sourceTree = SOURCE_ROOT; };
 		148D116F1D17A4410095BD6A /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = eventsk2/LoadingViewController.swift; sourceTree = SOURCE_ROOT; };
 		14CE502F1D1B1DD70078A95D /* NULing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NULing.png; path = images/NULing.png; sourceTree = SOURCE_ROOT; };
-		14E444A31CFCC0F00006F22F /* ResponseBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseBackground.swift; path = eventsk2/ResponseBackground.swift; sourceTree = SOURCE_ROOT; };
 		14F53D931D08B27800637DD5 /* ChiLDyB02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChiLDyB02.png; path = images/ChiLDyB02.png; sourceTree = SOURCE_ROOT; };
 		99182EDC1D47D15D0091FCBF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		99182EDD1D47D15D0091FCBF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -121,8 +115,6 @@
 				140A99181CCEB6200036E5EC /* 4_400_6_3_800_4.mov */,
 				140A991A1CCEB6200036E5EC /* Practice_A.mov */,
 				140A991B1CCEB6200036E5EC /* Practice_B.mov */,
-				140A992B1CCEB92B0036E5EC /* monkey orange.png */,
-				140A992C1CCEB92B0036E5EC /* monkey purple.png */,
 				14F53D931D08B27800637DD5 /* ChiLDyB02.png */,
 				14CE502F1D1B1DD70078A95D /* NULing.png */,
 				998BC2AA1D5D2A110078CE40 /* bluecheetah.png */,
@@ -162,7 +154,6 @@
 				142664601CC8183D00EB8BE6 /* Main.storyboard */,
 				142664631CC8183D00EB8BE6 /* Assets.xcassets */,
 				142481F41CFA47F500CA8F9F /* BackgroundView.swift */,
-				14E444A31CFCC0F00006F22F /* ResponseBackground.swift */,
 				142664651CC8183D00EB8BE6 /* LaunchScreen.storyboard */,
 				142664681CC8183D00EB8BE6 /* Info.plist */,
 				1426647E1CC81E0600EB8BE6 /* Models */,
@@ -262,12 +253,10 @@
 				140A99241CCEB6200036E5EC /* Practice_A.mov in Resources */,
 				140A991E1CCEB6200036E5EC /* 2_800_6_4_600_4.mov in Resources */,
 				140A99201CCEB6200036E5EC /* 3_800_4_4_400_6.mov in Resources */,
-				140A992E1CCEB92B0036E5EC /* monkey purple.png in Resources */,
 				998BC2AC1D5D2A110078CE40 /* bluecheetah.png in Resources */,
 				140A991F1CCEB6200036E5EC /* 3_400_8_2_800_6.mov in Resources */,
 				142664621CC8183D00EB8BE6 /* Main.storyboard in Resources */,
 				998BC2AD1D5D2A110078CE40 /* redcheetah.png in Resources */,
-				140A992D1CCEB92B0036E5EC /* monkey orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +272,6 @@
 				142664731CC81D5600EB8BE6 /* PlayVideoController.swift in Sources */,
 				145338761D3FFDB30056C9F5 /* MeetCheetahsController.swift in Sources */,
 				148D11701D17A4410095BD6A /* LoadingViewController.swift in Sources */,
-				14E444A41CFCC0F00006F22F /* ResponseBackground.swift in Sources */,
 				990C58BC1D5D1F1B00E53300 /* Stimuli.swift in Sources */,
 				1430722C1CCA906000F503A1 /* ResponseController.swift in Sources */,
 				1426645F1CC8183D00EB8BE6 /* WelcomeController.swift in Sources */,

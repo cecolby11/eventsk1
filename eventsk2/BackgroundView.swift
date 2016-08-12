@@ -12,40 +12,28 @@ import UIKit
 
 class BackgroundView: UIView {
     
-    @IBInspectable var white: UIColor = UIColor.whiteColor()
-    @IBInspectable var skyblue: UIColor = UIColor(red: 102/255, green:204/255, blue: 255/255, alpha:1)
-    @IBInspectable var black: UIColor = UIColor.blackColor()
-    @IBInspectable var black2: UIColor = UIColor.blackColor()
-    @IBInspectable var grassgreen: UIColor = UIColor(red: 138/255, green:255/255, blue:127/255, alpha:1)
-    @IBInspectable var clear: UIColor = UIColor.clearColor()
-    
+    @IBInspectable var brightGreen: UIColor = UIColor(red: 195/255, green:247/255, blue: 165/255, alpha:1)
+    @IBInspectable var brightPurple: UIColor = UIColor(red: 194/255, green: 124/255, blue: 254/255, alpha: 1)
     
     override func drawRect(rect: CGRect) {
         
         
         let currentContext = UIGraphicsGetCurrentContext()
         
-        let colors = [white.CGColor, skyblue.CGColor, black.CGColor]
-        let colors2 = [black2.CGColor, clear.CGColor]
-        let colors3 = [grassgreen.CGColor, clear.CGColor]
-        
+        let colors = [brightGreen.CGColor, brightPurple.CGColor]
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let colorLocations: [CGFloat] = [0.0, 0.6, 1.0]
+        let colorLocations: [CGFloat] = [0.3,
+                                         1.0]
         
         let gradient = CGGradientCreateWithColors(colorSpace, colors, colorLocations)
-        let gradient2 = CGGradientCreateWithColors(colorSpace, colors2, colorLocations)
-        let gradient3 = CGGradientCreateWithColors(colorSpace, colors3, colorLocations)
         
-        
-        let bottomRight = CGPoint(x: self.bounds.width, y:self.bounds.height)
+        //        let bottomRight = CGPoint(x: self.bounds.width, y:self.bounds.height)
         let topLeft = CGPoint.zero
-        let topRight = CGPoint(x: self.bounds.width, y:0)
+        //        let topRight = CGPoint(x: self.bounds.width, y:0)
         let bottomLeft = CGPoint(x: 0, y:self.bounds.height)
         
         
-        CGContextDrawLinearGradient(currentContext, gradient, topLeft, bottomRight, [])
-        CGContextDrawLinearGradient(currentContext, gradient2, topRight, bottomLeft, [])
-        CGContextDrawLinearGradient(currentContext, gradient3, bottomRight, topRight, [])
+        CGContextDrawLinearGradient(currentContext, gradient, topLeft, bottomLeft, [])
     }
-
+    
 }

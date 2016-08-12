@@ -30,7 +30,7 @@ class EndExperimentController : UIViewController {
     
     //MARK: Background Animations
     
-    func bounceCheetahs() {
+    func moveCheetahs() {
         cheetahs = [blueCheetah, redCheetah]
         
         animator = UIDynamicAnimator(referenceView: view)
@@ -56,7 +56,7 @@ class EndExperimentController : UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        bounceCheetahs()
+        moveCheetahs()
     }
     
 }
