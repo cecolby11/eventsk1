@@ -260,13 +260,7 @@
                             <outletCollection property="gestureRecognizers" destination="YVH-kR-SER" appends="YES" id="QME-w6-fXj"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="ZzB-JT-VF2">
-                        <barButtonItem key="backBarButtonItem" title="Restart Trial" id="RIJ-Ar-Mrv">
-                            <connections>
-                                <action selector="restartTrial:" destination="eEQ-NC-ZuA" id="gQh-4y-eqO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ZzB-JT-VF2"/>
                     <connections>
                         <outlet property="bananaDisplay" destination="N9V-aJ-gmt" id="Bnk-nN-66l"/>
                         <segue destination="bIh-Xn-FRQ" kind="show" identifier="toEndExperiment" id="ww1-ic-aAt"/>
@@ -317,7 +311,7 @@
                                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lon-g5-3u8">
                                             <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                             <items>
-                                                <barButtonItem title="replay" systemItem="refresh" id="Iat-iF-7Ed">
+                                                <barButtonItem systemItem="refresh" id="Iat-iF-7Ed">
                                                     <connections>
                                                         <action selector="replayVideo:" destination="kut-Kf-lCb" id="AIO-jC-SvI"/>
                                                     </connections>
