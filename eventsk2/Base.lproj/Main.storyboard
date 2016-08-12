@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="blueCheetah" destination="v7T-jN-CuK" id="6Y5-vJ-xDZ"/>
                         <outlet property="redCheetah" destination="6m0-4T-0x2" id="yHf-J0-DHA"/>
-                        <segue destination="JMY-5m-L0z" kind="show" identifier="toMeetMonkeys" id="xFn-SL-ew9"/>
+                        <segue destination="JMY-5m-L0z" kind="show" identifier="toMeetCheetahs" id="xFn-SL-ew9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

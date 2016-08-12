@@ -82,7 +82,7 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
             self.trial.condition = "\((alertController.textFields![1] as UITextField).text!)"
             
             if self.validateFields() { //require that all fields are filled before segue is called
-                self.performSegueWithIdentifier("toMeetMonkeys", sender: self) //manually segue when save button pressed
+                self.performSegueWithIdentifier("toMeetCheetahs", sender: self) //manually segue when save button pressed
             }
         })
         
@@ -152,12 +152,12 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     //MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toMeetMonkeys" {
+        if segue.identifier == "toMeetCheetahs" {
             setDefaultRealmForUser()
         }
     
         
-        if let destination = segue.destinationViewController as? MeetMonkeysController {
+        if let destination = segue.destinationViewController as? MeetCheetahsController {
             destination.trial = self.trial //pass subject instance to PVC
         }
         
