@@ -1,6 +1,6 @@
 //
 //  EndExperimentController.swift
-//  events.child.2
+//  eventsk2
 //
 //  Created by Casey Colby on 5/7/16.
 //  Copyright © 2016 Casey Colby. All rights reserved.
@@ -11,8 +11,8 @@ import UIKit
 
 class EndExperimentController : UIViewController {
     
-     @IBOutlet weak var orangeMonkey: UIImageView!
-    @IBOutlet weak var purpleMonkey: UIImageView!
+    @IBOutlet weak var blueCheetah: UIImageView!
+    @IBOutlet weak var redCheetah: UIImageView!
 
     //MARK: Variables
     
@@ -22,12 +22,7 @@ class EndExperimentController : UIViewController {
     var collision: UICollisionBehavior!
     var elasticity: UIDynamicItemBehavior!
 
-    var monkeys : [UIDynamicItem]!
-    
-    var monkeyAnimator: UIDynamicAnimator!
-    var monkeyGravity: UIGravityBehavior!
-    var monkeyCollision: UICollisionBehavior!
-    var monkeyElasticity: UIDynamicItemBehavior!
+    var cheetahs : [UIDynamicItem]!
     
     
     
@@ -35,21 +30,21 @@ class EndExperimentController : UIViewController {
     
     //MARK: Background Animations
     
-    func bounceMonkeys() {
-        monkeys = [orangeMonkey, purpleMonkey]
+    func bounceCheetahs() {
+        cheetahs = [blueCheetah, redCheetah]
         
-        monkeyAnimator = UIDynamicAnimator(referenceView: view)
+        animator = UIDynamicAnimator(referenceView: view)
         
-        monkeyGravity = UIGravityBehavior(items: monkeys)
-        monkeyCollision = UICollisionBehavior(items: monkeys)
-        monkeyCollision.translatesReferenceBoundsIntoBoundary = true
-        monkeyElasticity = UIDynamicItemBehavior(items: monkeys)
-        monkeyElasticity.elasticity = 1.08
+        gravity = UIGravityBehavior(items: cheetahs)
+        collision = UICollisionBehavior(items: cheetahs)
+        collision.translatesReferenceBoundsIntoBoundary = true
+        elasticity = UIDynamicItemBehavior(items: cheetahs)
+        elasticity.elasticity = 1.08
         
         // Add to animator
-        monkeyAnimator.addBehavior(monkeyGravity)
-        monkeyAnimator.addBehavior(monkeyCollision)
-        monkeyAnimator.addBehavior(monkeyElasticity)
+        animator.addBehavior(gravity)
+        animator.addBehavior(collision)
+        animator.addBehavior(elasticity)
         
     }
     
@@ -61,7 +56,7 @@ class EndExperimentController : UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        bounceMonkeys()
+        bounceCheetahs()
     }
     
 }

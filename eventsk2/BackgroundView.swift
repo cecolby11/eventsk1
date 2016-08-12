@@ -1,6 +1,6 @@
 //
 //  BackgroundView.swift
-//  events.child.2
+//  eventsk2
 //
 //  Created by Casey Colby on 5/28/16.
 //  Copyright © 2016 Casey Colby. All rights reserved.

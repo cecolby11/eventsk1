@@ -1,6 +1,6 @@
 //
 //  WelcomeController.swift
-//  events.child.2
+//  eventsk2
 //
 //  Created by Casey Colby on 4/20/16.
 //  Copyright © 2016 Casey Colby. All rights reserved.
@@ -23,9 +23,9 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     var cancelAction: UIAlertAction!
     
     //animation vars
-    @IBOutlet weak var orangeMonkey: UIImageView!
-    @IBOutlet weak var purpleMonkey: UIImageView!
-    var monkeys : [UIDynamicItem]!
+    @IBOutlet weak var blueCheetah: UIImageView!
+    @IBOutlet weak var redCheetah: UIImageView!
+    var cheetahs : [UIDynamicItem]!
 
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
@@ -100,15 +100,15 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     
     //MARK: Animation 
     
-    func bounceMonkeys() {
-        monkeys = [orangeMonkey, purpleMonkey]
+    func bounceCheetahs() {
+        cheetahs = [blueCheetah, redCheetah]
         
         animator = UIDynamicAnimator(referenceView: view)
         
-        gravity = UIGravityBehavior(items: monkeys)
-        collision = UICollisionBehavior(items: monkeys)
+        gravity = UIGravityBehavior(items: cheetahs)
+        collision = UICollisionBehavior(items: cheetahs)
         collision.translatesReferenceBoundsIntoBoundary = true
-        elasticity = UIDynamicItemBehavior(items: monkeys)
+        elasticity = UIDynamicItemBehavior(items: cheetahs)
         elasticity.elasticity = 1.06
         
         // Add to animator
@@ -142,7 +142,7 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        bounceMonkeys()
+        bounceCheetahs()
     }
     
     

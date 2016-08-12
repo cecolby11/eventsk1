@@ -28,7 +28,7 @@
 		142664671CC8183D00EB8BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142664651CC8183D00EB8BE6 /* LaunchScreen.storyboard */; };
 		142664731CC81D5600EB8BE6 /* PlayVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142664721CC81D5600EB8BE6 /* PlayVideoController.swift */; };
 		1430722C1CCA906000F503A1 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430722B1CCA906000F503A1 /* ResponseController.swift */; };
-		145338761D3FFDB30056C9F5 /* MeetMonkeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145338751D3FFDB30056C9F5 /* MeetMonkeysController.swift */; };
+		145338761D3FFDB30056C9F5 /* MeetCheetahsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145338751D3FFDB30056C9F5 /* MeetCheetahsController.swift */; };
 		1477DF5A1CCACEE10013B4B6 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477DF591CCACEE10013B4B6 /* Trial.swift */; };
 		148D11701D17A4410095BD6A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D116F1D17A4410095BD6A /* LoadingViewController.swift */; };
 		14CE50301D1B1DD70078A95D /* NULing.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CE502F1D1B1DD70078A95D /* NULing.png */; };
@@ -82,7 +82,7 @@
 		142664681CC8183D00EB8BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = eventsk2/Info.plist; sourceTree = SOURCE_ROOT; };
 		142664721CC81D5600EB8BE6 /* PlayVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayVideoController.swift; path = eventsk2/PlayVideoController.swift; sourceTree = SOURCE_ROOT; };
 		1430722B1CCA906000F503A1 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseController.swift; path = eventsk2/ResponseController.swift; sourceTree = SOURCE_ROOT; };
-		145338751D3FFDB30056C9F5 /* MeetMonkeysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeetMonkeysController.swift; path = eventsk2/MeetMonkeysController.swift; sourceTree = SOURCE_ROOT; };
+		145338751D3FFDB30056C9F5 /* MeetCheetahsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeetCheetahsController.swift; path = eventsk2/MeetCheetahsController.swift; sourceTree = SOURCE_ROOT; };
 		1477DF591CCACEE10013B4B6 /* Trial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trial.swift; path = eventsk2/Trial.swift; sourceTree = SOURCE_ROOT; };
 		148D116F1D17A4410095BD6A /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = eventsk2/LoadingViewController.swift; sourceTree = SOURCE_ROOT; };
 		14CE502F1D1B1DD70078A95D /* NULing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NULing.png; path = images/NULing.png; sourceTree = SOURCE_ROOT; };
@@ -155,7 +155,7 @@
 				1426645C1CC8183D00EB8BE6 /* AppDelegate.swift */,
 				148D116F1D17A4410095BD6A /* LoadingViewController.swift */,
 				1426645E1CC8183D00EB8BE6 /* WelcomeController.swift */,
-				145338751D3FFDB30056C9F5 /* MeetMonkeysController.swift */,
+				145338751D3FFDB30056C9F5 /* MeetCheetahsController.swift */,
 				142664721CC81D5600EB8BE6 /* PlayVideoController.swift */,
 				1430722B1CCA906000F503A1 /* ResponseController.swift */,
 				140A75041CDE81FC00532FA5 /* EndExperimentController.swift */,
@@ -281,7 +281,7 @@
 				140A75051CDE81FC00532FA5 /* EndExperimentController.swift in Sources */,
 				142481F51CFA47F500CA8F9F /* BackgroundView.swift in Sources */,
 				142664731CC81D5600EB8BE6 /* PlayVideoController.swift in Sources */,
-				145338761D3FFDB30056C9F5 /* MeetMonkeysController.swift in Sources */,
+				145338761D3FFDB30056C9F5 /* MeetCheetahsController.swift in Sources */,
 				148D11701D17A4410095BD6A /* LoadingViewController.swift in Sources */,
 				14E444A41CFCC0F00006F22F /* ResponseBackground.swift in Sources */,
 				990C58BC1D5D1F1B00E53300 /* Stimuli.swift in Sources */,

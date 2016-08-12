@@ -13,8 +13,8 @@ import AVFoundation
 
 class ResponseController : UIViewController {
     
-    @IBOutlet weak var monkey1: UIButton!
-    @IBOutlet weak var monkey2: UIButton!
+    @IBOutlet weak var cheetahA: UIButton!
+    @IBOutlet weak var cheetahB: UIButton!
     @IBOutlet weak var noResponse: UIBarButtonItem!
     @IBOutlet weak var replayVideo: UIBarButtonItem!
     
@@ -32,11 +32,11 @@ class ResponseController : UIViewController {
         let leftBanana = UILabel(frame: CGRect(x: 0,y: 0,width: 100.0, height: 100.0))
         leftBanana.text = "🍌"
         leftBanana.font = leftBanana.font.fontWithSize(80)
-       // values for ranges and random points over monkeys
+       // values for ranges and random points over cheetahs
         let midpt = self.view.frame.size.width/2
-        let monkeyWidth = self.monkey1.frame.size.width
-        let rangeSize = UInt32(monkeyWidth)
-        let leftRangeStart = midpt - 200 - monkeyWidth/2 //monkey centers + or - 200 from midpoint
+        let cheetahWidth = self.cheetahA.frame.size.width
+        let rangeSize = UInt32(cheetahWidth)
+        let leftRangeStart = midpt - 200 - cheetahWidth/2 //cheetah centers + or - 200 from midpoint
         let leftRand = leftRangeStart + CGFloat(arc4random_uniform(rangeSize))
         leftBanana.center = CGPointMake(leftRand, 40)
         leftBanana.hidden = true
@@ -46,9 +46,9 @@ class ResponseController : UIViewController {
     lazy var rightBanana: UILabel = {
         let rightBanana = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 100.0))
         let midpt = self.view.frame.size.width/2
-        let monkeyWidth = self.monkey1.frame.size.width
-        let rangeSize = UInt32(monkeyWidth)
-        let rightRangeStart = midpt + 200 - monkeyWidth/2 //monkey centers + or - 200 from midpoint
+        let cheetahWidth = self.cheetahA.frame.size.width
+        let rangeSize = UInt32(cheetahWidth)
+        let rightRangeStart = midpt + 200 - cheetahWidth/2 //cheetah centers + or - 200 from midpoint
         let rightRand = rightRangeStart + CGFloat(arc4random_uniform(rangeSize)) //right half:start at midpoint//right half:start at midpoint
         rightBanana.center = CGPointMake(rightRand, 40)
         rightBanana.text = "🍌"
@@ -164,22 +164,22 @@ class ResponseController : UIViewController {
     //when response button pressed:
     @IBAction func response(sender:AnyObject) {
         switch sender{
-        case monkey1 as UIButton:
+        case cheetahA as UIButton:
             selectedButton = "A"
-            monkey2.enabled = false
+            cheetahB.enabled = false
             noResponse.enabled = false
             bananas = leftBanana
-            wobbleButton(monkey1)
-        case monkey2 as UIButton:
+            wobbleButton(cheetahA)
+        case cheetahB as UIButton:
             selectedButton = "B"
-            monkey1.enabled = false
+            cheetahA.enabled = false
             noResponse.enabled = false
             bananas = rightBanana
-            wobbleButton(monkey2)
+            wobbleButton(cheetahB)
         case noResponse as UIBarButtonItem:
             selectedButton = "NA"
-            monkey1.enabled = false
-            monkey2.enabled = false
+            cheetahA.enabled = false
+            cheetahB.enabled = false
             bananas = centerBanana
         default:
             selectedButton = "NA"
@@ -243,8 +243,8 @@ class ResponseController : UIViewController {
     
         collision = UICollisionBehavior(items: [bananas])
         collision.translatesReferenceBoundsIntoBoundary = true //containing view acts as boundary
-        collision.addBoundaryWithIdentifier("barrier1", forPath: UIBezierPath(ovalInRect: monkey1.frame))
-        collision.addBoundaryWithIdentifier("barrier2", forPath: UIBezierPath(ovalInRect: monkey2.frame))
+        collision.addBoundaryWithIdentifier("barrier1", forPath: UIBezierPath(ovalInRect: cheetahA.frame))
+        collision.addBoundaryWithIdentifier("barrier2", forPath: UIBezierPath(ovalInRect: cheetahB.frame))
         
         elasticity = UIDynamicItemBehavior(items: [bananas])
         elasticity.elasticity = 0.6 //control bounciness! (<1 -> loses velocity each bounce)
