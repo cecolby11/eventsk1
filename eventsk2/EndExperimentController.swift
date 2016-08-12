@@ -9,46 +9,34 @@
 import Foundation
 import UIKit
 
-class EndExperimentController : UIViewController {
+class EndExperimentController : UIViewController{
     
     @IBOutlet weak var blueCheetah: UIImageView!
     @IBOutlet weak var redCheetah: UIImageView!
 
     //MARK: Variables
     
-    //init dynamics properties
-    var animator: UIDynamicAnimator!
-    var gravity: UIGravityBehavior!
-    var collision: UICollisionBehavior!
-    var elasticity: UIDynamicItemBehavior!
-
-    var cheetahs : [UIDynamicItem]!
-    
-    
     
     
     
     //MARK: Background Animations
     
-    func moveCheetahs() {
-        cheetahs = [blueCheetah, redCheetah]
-        
-        animator = UIDynamicAnimator(referenceView: view)
-        
-        gravity = UIGravityBehavior(items: cheetahs)
-        collision = UICollisionBehavior(items: cheetahs)
-        collision.translatesReferenceBoundsIntoBoundary = true
-        elasticity = UIDynamicItemBehavior(items: cheetahs)
-        elasticity.elasticity = 1.08
-        
-        // Add to animator
-        animator.addBehavior(gravity)
-        animator.addBehavior(collision)
-        animator.addBehavior(elasticity)
-        
+    func moveRight() {
+        UIView.animateWithDuration(2.2, delay: 0.0, options: .CurveEaseInOut, animations: {
+            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.blueCheetah.center.y)
+            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.redCheetah.center.y)
+            }, completion: {(complete: Bool) in self.moveLeft()})
+        }
+    
+    func moveLeft() {
+        UIView.animateWithDuration(2.2, delay: 0, options: .CurveEaseInOut, animations: {
+            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.blueCheetah.center.y)
+            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.redCheetah.center.y)
+            }, completion: {(complete: Bool) in self.moveRight()})
+
     }
     
-    
+
     
     
     
@@ -56,8 +44,7 @@ class EndExperimentController : UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        moveCheetahs()
-    }
-    
-}
+        moveRight()
+       }
 
+}

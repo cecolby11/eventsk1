@@ -25,12 +25,7 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     //animation vars
     @IBOutlet weak var blueCheetah: UIImageView!
     @IBOutlet weak var redCheetah: UIImageView!
-    var cheetahs : [UIDynamicItem]!
 
-    var animator: UIDynamicAnimator!
-    var gravity: UIGravityBehavior!
-    var collision: UICollisionBehavior!
-    var elasticity: UIDynamicItemBehavior!
     
     
     
@@ -100,23 +95,26 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     
     //MARK: Animation 
     
-    func bounceCheetahs() {
-        cheetahs = [blueCheetah, redCheetah]
-        
-        animator = UIDynamicAnimator(referenceView: view)
-        
-        gravity = UIGravityBehavior(items: cheetahs)
-        collision = UICollisionBehavior(items: cheetahs)
-        collision.translatesReferenceBoundsIntoBoundary = true
-        elasticity = UIDynamicItemBehavior(items: cheetahs)
-        elasticity.elasticity = 1.06
-        
-        // Add to animator
-        animator.addBehavior(gravity)
-        animator.addBehavior(collision)
-        animator.addBehavior(elasticity)
+    //MARK: Background Animations
+    
+    func moveRight() {
+        UIView.animateWithDuration(2.2, delay: 0.0, options: .CurveEaseInOut, animations: {
+            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.blueCheetah.center.y)
+            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 + 250, y: self.redCheetah.center.y)
+            }, completion:
+            {(complete: Bool) in self.moveLeft()})
+    }
+    
+    func moveLeft() {
+        UIView.animateWithDuration(2.2, delay: 0, options: .CurveEaseInOut, animations: {
+            self.blueCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.blueCheetah.center.y)
+            self.redCheetah.center = CGPoint(x: self.view.frame.width/2 - 250, y: self.redCheetah.center.y)
+            }, completion: {(complete: Bool) in self.moveRight()})
         
     }
+    
+    
+    
     
     
     
@@ -140,9 +138,9 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
     
     //MARK: View Lifecycle
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        bounceCheetahs()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        moveRight()
     }
     
     
