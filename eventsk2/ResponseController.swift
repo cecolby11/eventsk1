@@ -205,9 +205,9 @@ class ResponseController : UIViewController {
     
     func revealObjectAnimated() {
         if bananas != nil {
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ResponseController.capturePosition), userInfo: nil, repeats: true) //check every .1 seconds if banana moving by calling capturePosition()
+//            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ResponseController.capturePosition), userInfo: nil, repeats: true) //check every .1 seconds if banana moving by calling capturePosition()
             bananas.hidden = false
-            addBananaPhysics()
+            moveBanana()
         }
     }
 
@@ -256,6 +256,19 @@ class ResponseController : UIViewController {
         
     }
     
+    func moveBanana() {
+        let path = UIBezierPath()
+        path.moveToPoint(CGPoint(x:16, y:239))
+        path.addCurveToPoint(CGPoint(x:301, y:239), controlPoint1: CGPoint(x:136, y:373), controlPoint2: CGPoint(x:178, y:110))
+        
+        let anim = CAKeyframeAnimation(keyPath: "position")
+        anim.path = path.CGPath
+        anim.rotationMode = kCAAnimationRotateAuto
+        anim.repeatCount = Float.infinity
+        anim.duration = 5.0
+        
+        bananas.layer.addAnimation(anim, forKey: "animate position along path")
+    }
    
     
     

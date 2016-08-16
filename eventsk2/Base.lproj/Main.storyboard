@@ -126,8 +126,8 @@
                                                     <constraint firstItem="8ZR-iC-FiU" firstAttribute="centerX" secondItem="OYM-eL-7GJ" secondAttribute="centerX" id="es7-lL-hFr"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="NQJ-1k-dWP" appends="YES" id="0ra-s4-ebb"/>
                                                     <outletCollection property="gestureRecognizers" destination="MZb-ah-npe" appends="YES" id="VCN-mw-60F"/>
+                                                    <outletCollection property="gestureRecognizers" destination="zxf-Q6-dkq" appends="YES" id="0mL-2p-Xec"/>
                                                 </connections>
                                             </view>
                                             <vibrancyEffect>
@@ -163,20 +163,20 @@
                         <outlet property="gestureInstruction" destination="8ZR-iC-FiU" id="Tzs-F0-l87"/>
                         <outlet property="longPressRecognizer" destination="MZb-ah-npe" id="dJ1-gj-DWF"/>
                         <outlet property="redCheetah" destination="ReA-9s-y6a" id="aaB-75-eDc"/>
-                        <outlet property="tapGestureRecognizer" destination="NQJ-1k-dWP" id="dFt-oU-UfK"/>
+                        <outlet property="tapGestureRecognizer" destination="zxf-Q6-dkq" id="urO-wR-P3g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFn-Rb-ntP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NQJ-1k-dWP">
-                    <connections>
-                        <segue destination="zWy-HH-ZT0" kind="show" identifier="tobeginPlayVideo" id="SkM-Zy-UaZ"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="MZb-ah-npe">
                     <connections>
                         <action selector="beginGame:" destination="JMY-5m-L0z" id="dAI-rO-iON"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="zxf-Q6-dkq">
+                    <connections>
+                        <segue destination="zWy-HH-ZT0" kind="show" id="TC0-vs-BMt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1985" y="-328"/>
         </scene>

@@ -33,9 +33,6 @@ class MeetCheetahsController: UIViewController {
         gestureInstruction.text = "two-finger tap anywhere to continue"
         longPressRecognizer.enabled = false
         tapGestureRecognizer.enabled = true
-        tapGestureRecognizer.numberOfTapsRequired = 2
-        
-        
     }
  
     
@@ -54,6 +51,7 @@ class MeetCheetahsController: UIViewController {
         gestureInstruction.hidden = false
         tapGestureRecognizer.enabled = false
         longPressRecognizer.enabled = true
+        tapGestureRecognizer.numberOfTouchesRequired = 2
     }
     
     
