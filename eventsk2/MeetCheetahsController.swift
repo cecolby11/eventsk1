@@ -29,10 +29,11 @@ class MeetCheetahsController: UIViewController {
     // holding screen that requires long press to enter experiment so that we can set up the game and subject info before the subject arrives and leave it in this state until they're ready to participate
     override func viewDidLoad() {
         super.viewDidLoad()
-        gestureInstruction.text = "two-finger tap to enter"
+        gestureInstruction.text = "two-finger double-tap to enter"
         gestureInstruction.hidden = false
         tapGestureRecognizer.enabled = true
         tapGestureRecognizer.numberOfTouchesRequired = 2
+        tapGestureRecognizer.numberOfTapsRequired = 2
     }
     
     
