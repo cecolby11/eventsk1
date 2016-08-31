@@ -18,7 +18,13 @@ class ResponseController : UIViewController {
     @IBOutlet weak var noResponse: UIBarButtonItem!
     @IBOutlet weak var replayVideo: UIBarButtonItem!
     
+    
+    
+    
+    
     //MARK: Variables
+    
+    var star: UILabel! = nil
     
     //animation completion vars
     var t : Int = 1
@@ -27,59 +33,13 @@ class ResponseController : UIViewController {
     
     var stim = Stimuli()
     
-    //banana vars
-    lazy var leftBanana: UILabel = {
-        let leftBanana = UILabel(frame: CGRect(x: 0,y: 0,width: 100.0, height: 100.0))
-        leftBanana.text = "🍌"
-        leftBanana.font = leftBanana.font.fontWithSize(80)
-       // values for ranges and random points over cheetahs
-        let midpt = self.view.frame.size.width/2
-        let cheetahWidth = self.cheetahA.frame.size.width
-        let rangeSize = UInt32(cheetahWidth)
-        let leftRangeStart = midpt - 200 - cheetahWidth/2 //cheetah centers + or - 200 from midpoint
-        let leftRand = leftRangeStart + CGFloat(arc4random_uniform(rangeSize))
-        leftBanana.center = CGPointMake(leftRand, 40)
-        leftBanana.hidden = true
-        return leftBanana
-    }()
-
-    lazy var rightBanana: UILabel = {
-        let rightBanana = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 100.0))
-        let midpt = self.view.frame.size.width/2
-        let cheetahWidth = self.cheetahA.frame.size.width
-        let rangeSize = UInt32(cheetahWidth)
-        let rightRangeStart = midpt + 200 - cheetahWidth/2 //cheetah centers + or - 200 from midpoint
-        let rightRand = rightRangeStart + CGFloat(arc4random_uniform(rangeSize)) //right half:start at midpoint//right half:start at midpoint
-        rightBanana.center = CGPointMake(rightRand, 40)
-        rightBanana.text = "🍌"
-        rightBanana.font = rightBanana.font.fontWithSize(80)
-        rightBanana.hidden = true
-        return rightBanana
-    }()
-    
-    lazy var centerBanana: UILabel = {
-        let centerBanana = UILabel(frame: CGRect(x: 0, y:0, width: 100.0, height: 100.0))
-        centerBanana.center = CGPointMake (self.view.frame.size.width/2, 40)
-        centerBanana.text = "🍌"
-        centerBanana.font = centerBanana.font.fontWithSize(78)
-        centerBanana.hidden = true
-        return centerBanana
-    } ()
-    
-    var bananas: UIView! //left or right banana physics
-    
     //db vars
     var trial: Trial! //passed from PVController
     var selectedButton: String!
     var i: Int = 0 //trial# / stimuli index; passed from PVController
     var totalTrials = 8 //CHANGE DEPENDING ON NUMBER OF TRIALS
     var p: Int = 0 //practice trial index, passed from PVController
-      
-    //physics properties
-    var animator: UIDynamicAnimator!
-    var gravity: UIGravityBehavior!
-    var collision: UICollisionBehavior!
-    var elasticity: UIDynamicItemBehavior!
+
     
 
     
@@ -168,24 +128,30 @@ class ResponseController : UIViewController {
             selectedButton = "A"
             cheetahB.enabled = false
             noResponse.enabled = false
-            bananas = leftBanana
             wobbleButton(cheetahA)
         case cheetahB as UIButton:
             selectedButton = "B"
             cheetahA.enabled = false
             noResponse.enabled = false
-            bananas = rightBanana
             wobbleButton(cheetahB)
         case noResponse as UIBarButtonItem:
             selectedButton = "NA"
             cheetahA.enabled = false
             cheetahB.enabled = false
-            bananas = centerBanana
         default:
             selectedButton = "NA"
         }
+        starSwoosh()
         
-        revealObjectAnimated()
+        let seconds = 4.0
+        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            
+            self.performSegueWithIdentifier("tocontinuePlayVideo", sender: self)
+            
+        })
     }
     
     func wobbleButton(sender:UIButton) {
@@ -202,92 +168,59 @@ class ResponseController : UIViewController {
                                     CGAffineTransformIdentity}
             , completion: nil)
         }
-    
-    func revealObjectAnimated() {
-        if bananas != nil {
-//            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(ResponseController.capturePosition), userInfo: nil, repeats: true) //check every .1 seconds if banana moving by calling capturePosition()
-            bananas.hidden = false
-        }
-    }
 
     
     
-    //to check if UIObject still moving (if not, trigger segue)
-    func capturePosition() {
-        let position = bananas.center.y
-        posn.insert(position, atIndex: t)
-        
-        loop: if ((t % 5) == 0) {
-            for n in 1 ..< 4 {
-                if (posn[t] - posn[t-n] == 0 ){
-                } else {
-                    break loop
-                }
-            }
-            timer.invalidate()
-            self.performSegueWithIdentifier("tocontinuePlayVideo", sender: self)
+    
+    
+    //MARK: Animations
+    func starSwoosh() {
+        for _ in 0...i {
+            
+            // create a square
+            star = UILabel()
+            star.frame = CGRect(x:0, y:0, width: 100.0, height:100.0)
+            star.text = "⭐️"
+            star.font = star.font.fontWithSize(60)
+            
+            self.view.addSubview(star)
+            
+            // randomly create a value between 0.0 and 150.0, ADD TO EVERYTHING so the diff objects appear at different levels along bezier curve
+            let randomYOffset = CGFloat( arc4random_uniform(150))
+            
+            //a UIBezierPath combines the geometry and attributes describing the path and draws it
+            let path = UIBezierPath()
+            
+            //part 1: set the geometry
+            //pick path's current point without drawing a segment
+            path.moveToPoint(CGPoint(x: 16,y: 239 + randomYOffset))
+            //draw curve to endpt
+            let endpt = CGPoint(x: view.frame.width+50, y: 289+randomYOffset)
+            path.addCurveToPoint(endpt, controlPoint1: CGPoint(x: 116, y: 403 + randomYOffset), controlPoint2: CGPoint(x: view.frame.width-200, y: 90 + randomYOffset))
+            
+            
+            //part 2: create the animation attributes
+            // create the animation
+            let anim = CAKeyframeAnimation(keyPath: "position")
+            anim.path = path.CGPath
+            anim.rotationMode = kCAAnimationRotateAuto
+            anim.repeatCount = 1
+            
+            // each square will take between 4.0 and 8.0 seconds
+            // to complete one animation loop
+            anim.duration = Double(arc4random_uniform(30)+20)/10
+            
+            
+            //don't reset to original position at the end, hold final position instead
+            anim.fillMode = kCAFillModeForwards
+            anim.removedOnCompletion = false
+            
+            // add the animation
+            star.layer.addAnimation(anim, forKey: "animate position along path")
         }
-        t+=1
     }
-    
-    
-    
-    
-    
-    //MARK: Physics 
-    
-    func addBananaPhysics() {
-    
-        gravity = UIGravityBehavior(items: [bananas])
-    
-        collision = UICollisionBehavior(items: [bananas])
-        collision.translatesReferenceBoundsIntoBoundary = true //containing view acts as boundary
-        collision.addBoundaryWithIdentifier("barrier1", forPath: UIBezierPath(ovalInRect: cheetahA.frame))
-        collision.addBoundaryWithIdentifier("barrier2", forPath: UIBezierPath(ovalInRect: cheetahB.frame))
-        
-        elasticity = UIDynamicItemBehavior(items: [bananas])
-        elasticity.elasticity = 0.6 //control bounciness! (<1 -> loses velocity each bounce)
-    
-        //add to animator
-        animator.addBehavior(gravity)
-        animator.addBehavior(collision)
-        animator.addBehavior(elasticity)
-        
-    }
-    
-//    func moveBanana() {
-//        let path = UIBezierPath()
-//        path.moveToPoint(CGPoint(x:16, y:239))
-//        path.addCurveToPoint(CGPoint(x:301, y:239), controlPoint1: CGPoint(x:136, y:373), controlPoint2: CGPoint(x:178, y:110))
-//        
-//        let anim = CAKeyframeAnimation(keyPath: "position")
-//        anim.path = path.CGPath
-//        anim.rotationMode = kCAAnimationRotateAuto
-//        anim.repeatCount = Float.infinity
-//        anim.duration = 5.0
-//        
-//        bananas.layer.addAnimation(anim, forKey: "animate position along path")
-//    }
-   
-    
     
 
-    
-    //MARK: View Lifecycle
-    
-    override func viewDidLoad() {
-        
-        // Add our bananas to the view
-        view.addSubview(leftBanana)
-        view.addSubview(rightBanana)
-        view.addSubview(centerBanana)
-        
-        //animator for everything
-        animator = UIDynamicAnimator(referenceView: view)
-        
-    }
-    
-    
     
     
   
@@ -316,10 +249,3 @@ class ResponseController : UIViewController {
     }
     
 }
-
-
-/*resources for cool banana dynamics
- http://matthewpalmer.net/blog/2015/05/11/wwdc-student-scholarship-uikit-dynamics-swift-animated-device-rotation/
- https://www.raywenderlich.com/76147/uikit-dynamics-tutorial-swift
- https://omarfouad.com/blog/2014/08/02/getting-started-uikitdynamics-swift/
- */

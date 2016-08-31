@@ -184,8 +184,8 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
     }
 
     func updateBananaScore() {
-        let bananas = String(count: i, repeatedValue: Character("🍌"))
-        bananaDisplay.text = bananas
+        let stars = String(count: i, repeatedValue: Character("⭐️"))
+        bananaDisplay.text = stars
     }
     
     
