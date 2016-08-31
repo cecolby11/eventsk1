@@ -13,7 +13,7 @@ import AVFoundation
 
 class PlayVideoController : UIViewController, UINavigationControllerDelegate {
     
-    @IBOutlet weak var bananaDisplay: UILabel!
+    @IBOutlet weak var starDisplay: UILabel!
 
     //MARK: Variables
 
@@ -183,9 +183,10 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
         }
     }
 
-    func updateBananaScore() {
+    func updateStarScore() {
         let stars = String(count: i, repeatedValue: Character("⭐️"))
-        bananaDisplay.text = stars
+        starDisplay.text = stars
+        starDisplay.textAlignment = NSTextAlignment.Left
     }
     
     
@@ -196,7 +197,7 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        updateBananaScore()
+        updateStarScore()
     }
     
     

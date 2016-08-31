@@ -100,10 +100,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-lk-QMs">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-lk-QMs">
                                             <rect key="frame" x="6" y="151" width="189" height="299"/>
                                         </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-9s-y6a">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-9s-y6a">
                                             <rect key="frame" x="406" y="151" width="189" height="299"/>
                                         </imageView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3M-fD-Vnx">
@@ -126,7 +126,6 @@
                                                     <constraint firstItem="8ZR-iC-FiU" firstAttribute="centerX" secondItem="OYM-eL-7GJ" secondAttribute="centerX" id="es7-lL-hFr"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="MZb-ah-npe" appends="YES" id="VCN-mw-60F"/>
                                                     <outletCollection property="gestureRecognizers" destination="zxf-Q6-dkq" appends="YES" id="0mL-2p-Xec"/>
                                                 </connections>
                                             </view>
@@ -161,17 +160,11 @@
                     <connections>
                         <outlet property="blueCheetah" destination="1nP-lk-QMs" id="Gwh-W9-hLU"/>
                         <outlet property="gestureInstruction" destination="8ZR-iC-FiU" id="Tzs-F0-l87"/>
-                        <outlet property="longPressRecognizer" destination="MZb-ah-npe" id="dJ1-gj-DWF"/>
                         <outlet property="redCheetah" destination="ReA-9s-y6a" id="aaB-75-eDc"/>
                         <outlet property="tapGestureRecognizer" destination="zxf-Q6-dkq" id="urO-wR-P3g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFn-Rb-ntP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="MZb-ah-npe">
-                    <connections>
-                        <action selector="beginGame:" destination="JMY-5m-L0z" id="dAI-rO-iON"/>
-                    </connections>
-                </pongPressGestureRecognizer>
                 <tapGestureRecognizer id="zxf-Q6-dkq">
                     <connections>
                         <segue destination="zWy-HH-ZT0" kind="show" id="TC0-vs-BMt"/>
@@ -205,15 +198,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9V-aJ-gmt">
-                                            <rect key="frame" x="222" y="351" width="157" height="79"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                            <rect key="frame" x="100" y="360" width="400" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="400" id="J1h-kO-mAq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qv-hd-h2A">
-                                            <rect key="frame" x="0.0" y="-21" width="601" height="601"/>
+                                            <rect key="frame" x="0.0" y="-21" width="600" height="601"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bPa-aw-I3D">
-                                                <rect key="frame" x="0.0" y="0.0" width="601" height="601"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap anywhere to continue " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31J-HZ-bMm">
@@ -223,9 +219,17 @@
                                                         <nil key="highlightedColor"/>
                                                         <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-Xr-YxZ">
+                                                        <rect key="frame" x="100" y="381" width="400" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="GCT-Xr-YxZ" firstAttribute="centerY" secondItem="bPa-aw-I3D" secondAttribute="centerY" constant="110" id="4Zo-0b-k8k"/>
                                                     <constraint firstAttribute="bottom" secondItem="31J-HZ-bMm" secondAttribute="bottom" constant="55" id="VRP-Zf-cdC"/>
+                                                    <constraint firstItem="GCT-Xr-YxZ" firstAttribute="centerX" secondItem="bPa-aw-I3D" secondAttribute="centerX" id="bwv-yP-Z5G"/>
                                                     <constraint firstItem="31J-HZ-bMm" firstAttribute="centerX" secondItem="bPa-aw-I3D" secondAttribute="centerX" id="dsP-Sf-KYh"/>
                                                 </constraints>
                                             </view>
@@ -262,7 +266,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZzB-JT-VF2"/>
                     <connections>
-                        <outlet property="bananaDisplay" destination="N9V-aJ-gmt" id="Bnk-nN-66l"/>
+                        <outlet property="starDisplay" destination="N9V-aJ-gmt" id="J9r-lP-Q8L"/>
                         <segue destination="bIh-Xn-FRQ" kind="show" identifier="toEndExperiment" id="ww1-ic-aAt"/>
                         <segue destination="kut-Kf-lCb" kind="show" identifier="toResponse" id="5OX-yf-G0c"/>
                     </connections>
@@ -372,10 +376,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="yCb-Pv-C1F">
-                                <rect key="frame" x="6" y="-200" width="189" height="300"/>
+                                <rect key="frame" x="-45" y="-200" width="190" height="300"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-2p-Vgl">
-                                <rect key="frame" x="6" y="501" width="189" height="299"/>
+                                <rect key="frame" x="-45" y="501" width="190" height="299"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-PM-LLL">
                                 <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
@@ -406,9 +410,9 @@
                             <constraint firstAttribute="trailing" secondItem="r7C-PM-LLL" secondAttribute="trailing" id="5dr-7j-BDi"/>
                             <constraint firstItem="r7C-PM-LLL" firstAttribute="bottom" secondItem="8vn-M4-CrS" secondAttribute="top" id="IKA-Ha-uL3"/>
                             <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="350" id="OmT-k2-Bfq"/>
-                            <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-200" id="ShR-zP-bAF"/>
+                            <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-250" id="ShR-zP-bAF"/>
                             <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="-350" id="TGs-RC-O4Q"/>
-                            <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-200" id="hqS-Dz-ZoQ"/>
+                            <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-250" id="hqS-Dz-ZoQ"/>
                             <constraint firstItem="r7C-PM-LLL" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" id="se0-Ko-9Lv"/>
                         </constraints>
                     </view>

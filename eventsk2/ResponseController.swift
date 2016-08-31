@@ -25,6 +25,8 @@ class ResponseController : UIViewController {
     //MARK: Variables
     
     var star: UILabel! = nil
+    var anim = CAKeyframeAnimation(keyPath: "position")
+    var starCenter : CGPoint!
     
     //animation completion vars
     var t : Int = 1
@@ -128,22 +130,26 @@ class ResponseController : UIViewController {
             selectedButton = "A"
             cheetahB.enabled = false
             noResponse.enabled = false
+            starCenter = CGPoint(x:cheetahA.center.x - 70, y:cheetahA.center.y)
             wobbleButton(cheetahA)
         case cheetahB as UIButton:
             selectedButton = "B"
             cheetahA.enabled = false
             noResponse.enabled = false
             wobbleButton(cheetahB)
+            starCenter = CGPoint(x: cheetahB.center.x + 70, y:cheetahB.center.y)
         case noResponse as UIBarButtonItem:
             selectedButton = "NA"
             cheetahA.enabled = false
             cheetahB.enabled = false
+            starCenter = view.center
         default:
             selectedButton = "NA"
         }
-        starSwoosh()
         
-        let seconds = 4.0
+        starShimmer()
+        
+        let seconds = 4.5
         let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
         let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         
@@ -153,6 +159,12 @@ class ResponseController : UIViewController {
             
         })
     }
+    
+    
+    
+    
+    
+    //MARK: Animations
     
     func wobbleButton(sender:UIButton) {
         //shrink
@@ -169,57 +181,43 @@ class ResponseController : UIViewController {
             , completion: nil)
         }
 
-    
-    
-    
-    
-    //MARK: Animations
-    func starSwoosh() {
-        for _ in 0...i {
+    func starShimmer() {
+        for _ in 1...10 {
             
-            // create a square
             star = UILabel()
             star.frame = CGRect(x:0, y:0, width: 100.0, height:100.0)
             star.text = "⭐️"
-            star.font = star.font.fontWithSize(60)
-            
+            star.font = star.font.fontWithSize(CGFloat(arc4random_uniform(35)+15))
             self.view.addSubview(star)
             
-            // randomly create a value between 0.0 and 150.0, ADD TO EVERYTHING so the diff objects appear at different levels along bezier curve
-            let randomYOffset = CGFloat( arc4random_uniform(150))
-            
-            //a UIBezierPath combines the geometry and attributes describing the path and draws it
+            //UIBezierPath: combines the geometry and attributes of the path and draws it
             let path = UIBezierPath()
             
-            //part 1: set the geometry
-            //pick path's current point without drawing a segment
-            path.moveToPoint(CGPoint(x: 16,y: 239 + randomYOffset))
-            //draw curve to endpt
-            let endpt = CGPoint(x: view.frame.width+50, y: 289+randomYOffset)
-            path.addCurveToPoint(endpt, controlPoint1: CGPoint(x: 116, y: 403 + randomYOffset), controlPoint2: CGPoint(x: view.frame.width-200, y: 90 + randomYOffset))
+            //1. set the geometry
+            //pick path's current point without drawing a segment, then draw curve from there to endpt
             
+            path.moveToPoint(starCenter)
+            let randAngle = Double(arc4random_uniform(360))
+            let radius = Double(150)
+            let randX = Double(view.frame.width/2) + (radius)*cos(randAngle)
+            let XOffset = Double(arc4random_uniform(40))
+            let randY = Double(view.frame.height/2) + (radius)*sin(randAngle)
+            let YOffset = Double(arc4random_uniform(40))
+            let endpt = CGPoint(x: randX, y: randY)
             
-            //part 2: create the animation attributes
-            // create the animation
-            let anim = CAKeyframeAnimation(keyPath: "position")
+            path.addCurveToPoint(endpt, controlPoint1: CGPoint(x: randX + XOffset, y: randY + YOffset), controlPoint2: CGPoint(x: randX + XOffset - 30, y: randY + 20 + YOffset))
+            
+            //2. create the animation & its attributes
             anim.path = path.CGPath
             anim.rotationMode = kCAAnimationRotateAuto
             anim.repeatCount = 1
+            anim.duration = Double(arc4random_uniform(40)+30)/10 //2.0-6.0 seconds to complete
+            anim.timeOffset = Double(arc4random_uniform(190))
             
-            // each square will take between 4.0 and 8.0 seconds
-            // to complete one animation loop
-            anim.duration = Double(arc4random_uniform(30)+20)/10
-            
-            
-            //don't reset to original position at the end, hold final position instead
-            anim.fillMode = kCAFillModeForwards
-            anim.removedOnCompletion = false
-            
-            // add the animation
             star.layer.addAnimation(anim, forKey: "animate position along path")
         }
     }
-    
+
 
     
     
