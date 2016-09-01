@@ -210,7 +210,7 @@ class ResponseController : UIViewController {
             //2. create the animation & its attributes
             anim.path = path.CGPath
             anim.rotationMode = kCAAnimationRotateAuto
-            anim.repeatCount = 1
+            anim.repeatCount = 2
             anim.duration = Double(arc4random_uniform(40)+30)/10 //2.0-6.0 seconds to complete
             anim.timeOffset = Double(arc4random_uniform(190))
             
