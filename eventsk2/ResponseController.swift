@@ -214,6 +214,10 @@ class ResponseController : UIViewController {
             anim.duration = Double(arc4random_uniform(40)+30)/10 //2.0-6.0 seconds to complete
             anim.timeOffset = Double(arc4random_uniform(190))
             
+            //don't reset to original position at the end, hold final position instead
+            anim.fillMode = kCAFillModeForwards
+            anim.removedOnCompletion = false
+            
             star.layer.addAnimation(anim, forKey: "animate position along path")
         }
     }

@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="v7T-jN-CuK">
-                                <rect key="frame" x="-45" y="-200" width="190" height="300"/>
+                                <rect key="frame" x="-45" y="-125" width="190" height="300"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="6m0-4T-0x2">
-                                <rect key="frame" x="-45" y="501" width="190" height="299"/>
+                                <rect key="frame" x="-45" y="476" width="190" height="299"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3R-or-CMa">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
@@ -55,10 +55,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6m0-4T-0x2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="350" id="2uj-Sk-X1O"/>
+                            <constraint firstItem="6m0-4T-0x2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="325" id="2uj-Sk-X1O"/>
                             <constraint firstItem="Q3R-or-CMa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3oj-zC-LCx"/>
                             <constraint firstItem="Q3R-or-CMa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="824-Z8-bbf"/>
-                            <constraint firstItem="v7T-jN-CuK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-350" id="Xk6-dj-H3b"/>
+                            <constraint firstItem="v7T-jN-CuK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-275" id="Xk6-dj-H3b"/>
                             <constraint firstItem="v7T-jN-CuK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-250" id="nlC-l1-Hjj"/>
                             <constraint firstItem="6m0-4T-0x2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-250" id="qcS-MG-gaB"/>
                             <constraint firstItem="Q3R-or-CMa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="uZw-Xf-72Q"/>
@@ -376,10 +376,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="yCb-Pv-C1F">
-                                <rect key="frame" x="-45" y="-200" width="190" height="300"/>
+                                <rect key="frame" x="-45" y="-125" width="190" height="300"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcheetah.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-2p-Vgl">
-                                <rect key="frame" x="-45" y="501" width="190" height="299"/>
+                                <rect key="frame" x="-45" y="476" width="190" height="299"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-PM-LLL">
                                 <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
@@ -409,9 +409,9 @@
                             <constraint firstItem="r7C-PM-LLL" firstAttribute="leading" secondItem="ORF-v8-ysM" secondAttribute="leading" id="4Qj-ZM-QQH"/>
                             <constraint firstAttribute="trailing" secondItem="r7C-PM-LLL" secondAttribute="trailing" id="5dr-7j-BDi"/>
                             <constraint firstItem="r7C-PM-LLL" firstAttribute="bottom" secondItem="8vn-M4-CrS" secondAttribute="top" id="IKA-Ha-uL3"/>
-                            <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="350" id="OmT-k2-Bfq"/>
+                            <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="325" id="OmT-k2-Bfq"/>
                             <constraint firstItem="Lsp-2p-Vgl" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-250" id="ShR-zP-bAF"/>
-                            <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="-350" id="TGs-RC-O4Q"/>
+                            <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" constant="-275" id="TGs-RC-O4Q"/>
                             <constraint firstItem="yCb-Pv-C1F" firstAttribute="centerX" secondItem="ORF-v8-ysM" secondAttribute="centerX" constant="-250" id="hqS-Dz-ZoQ"/>
                             <constraint firstItem="r7C-PM-LLL" firstAttribute="centerY" secondItem="ORF-v8-ysM" secondAttribute="centerY" id="se0-Ko-9Lv"/>
                         </constraints>

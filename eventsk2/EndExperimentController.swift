@@ -79,7 +79,7 @@ class EndExperimentController : UIViewController{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        moveRight()
+        moveLeft()
         starSwoosh()
        }
 
