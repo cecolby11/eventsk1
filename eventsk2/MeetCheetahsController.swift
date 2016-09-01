@@ -18,9 +18,17 @@ class MeetCheetahsController: UIViewController {
     //MARK: Variables
     
     var trial: Trial! //receives subject instance from WelcomeController
-
+//    var i: Int = 0
 
     
+    
+    
+    //MARK: Actions
+    
+//    func jumpToTrial() {
+//        self.performSegueWithIdentifier("toPlayVideo", sender: self)
+//        //set i to whichever trial is selected!
+//    }
     
     
     
@@ -48,7 +56,9 @@ class MeetCheetahsController: UIViewController {
         
         if let destination = navVC.viewControllers.first as? PlayVideoController {
             destination.trial = self.trial //pass subject instance to PlayVideoController
+//            destination.i = self.i
         }
+        
     }
     
     
