@@ -50,8 +50,8 @@ class ResponseController : UIViewController {
     //MARK: Realm
     
     func preProcessResponse() {
-        if (trial.response == trial.heightWin) {
-            trial.heightResp = 1
+        if (trial.response == trial.distanceWin) {
+            trial.distanceResp = 1
         }
         if (trial.response == trial.numberWin) {
             trial.numberResp = 1
@@ -143,10 +143,11 @@ class ResponseController : UIViewController {
             cheetahA.enabled = false
             cheetahB.enabled = false
             starCenter = view.center
+            noResponse.enabled = false
         default:
             selectedButton = "NA"
         }
-        
+        replayVideo.enabled = false
         starShimmer()
         
         let seconds = 4.5
@@ -179,6 +180,7 @@ class ResponseController : UIViewController {
                                     sender.transform =
                                     CGAffineTransformIdentity}
             , completion: nil)
+        sender.enabled = false
         }
 
     func starShimmer() {

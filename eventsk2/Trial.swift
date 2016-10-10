@@ -18,18 +18,18 @@ class Trial: Object {
     dynamic var trialNumber = 0
     
     dynamic var Anumber = ""
-    dynamic var Aheight = ""
+    dynamic var Adistance = ""
     dynamic var Aduration = ""
     dynamic var Bnumber = ""
-    dynamic var Bheight = ""
+    dynamic var Bdistance = ""
     dynamic var Bduration = ""
     dynamic var response = ""
     
     dynamic var numberWin = ""
-    dynamic var heightWin = ""
+    dynamic var distanceWin = ""
     dynamic var durationWin = ""
     
     dynamic var numberResp = 0
-    dynamic var heightResp = 0
+    dynamic var distanceResp = 0
     dynamic var durationResp = 0
 }

@@ -105,10 +105,10 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
             trial.numberWin = "B"
         }
         
-        if (trial.Aheight > trial.Bheight) {
-            trial.heightWin = "A"
+        if (trial.Adistance > trial.Bdistance) {
+            trial.distanceWin = "A"
         } else {
-            trial.heightWin = "B"
+            trial.distanceWin = "B"
         }
         
         if trial.Aduration > trial.Bduration {
@@ -148,10 +148,10 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
             
             //2. populate trial with info from filename
             trial.Anumber = fileNameArr[0]
-            trial.Aheight = fileNameArr[1]
+            trial.Adistance = fileNameArr[1]
             trial.Aduration = fileNameArr[2]
             trial.Bnumber = fileNameArr[3]
-            trial.Bheight = fileNameArr[4]
+            trial.Bdistance = fileNameArr[4]
             trial.Bduration = fileNameArr[5]
             
             preProcessData()
