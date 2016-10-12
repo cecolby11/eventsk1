@@ -227,6 +227,20 @@ class ResponseController : UIViewController {
 
     
     
+    
+    
+    //MARK: View Lifecycle
+    
+    override func viewDidLoad() {
+        //only one cheetah may be selected at a time
+        cheetahA.exclusiveTouch = true
+        cheetahB.exclusiveTouch = true
+        
+    }
+    
+    
+    
+    
   
     //MARK: Navigation
     
