@@ -123,13 +123,13 @@ class WelcomeController: UIViewController, UIAlertViewDelegate {
      //To set filename of default Realm to studyname_subjectnumber, stored at default location
     func setDefaultRealmForUser() {
         var config = Realm.Configuration()
-        config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?.URLByAppendingPathComponent("eventsk1_\(trial.subjectNumber).realm")
+        config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?.URLByAppendingPathComponent("eventsk2_\(trial.subjectNumber).realm")
         
         //set this as the configuration used at the default location
         Realm.Configuration.defaultConfiguration = config
         
         print(Realm.Configuration.defaultConfiguration.fileURL!) //prints database filepath to the console (simulator)
-        NSLog("\n\nSubject Number: \(trial.subjectNumber)") //to aux file
+        NSLog("\n\n\nSubject Number: \(trial.subjectNumber)") //to aux file
         
     }
 
