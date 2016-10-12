@@ -88,6 +88,7 @@ class ResponseController : UIViewController {
                 playVideo(i, array: stim.order2)
             }
         }
+        NSLog("replay requested")
     }
     
     func playVideo(index: Int, array: [NSObject]){
@@ -147,6 +148,7 @@ class ResponseController : UIViewController {
         default:
             selectedButton = "NA"
         }
+        NSLog("participant selected: \(sender.tag)")
         replayVideo.enabled = false
         starShimmer()
         

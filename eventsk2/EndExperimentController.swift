@@ -81,6 +81,11 @@ class EndExperimentController : UIViewController{
         super.viewDidAppear(true)
         moveLeft()
         starSwoosh()
+        
+        NSLog("cheetahA: tag 1")
+        NSLog("cheetahB: tag 2")
+        NSLog("No Response: tag 3")
+        NSLog("experiment terminated successfully")
        }
 
 }

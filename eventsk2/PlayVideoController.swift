@@ -64,7 +64,8 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
         //setup
         path = array[index]
         url = NSURL.fileURLWithPath(path as! String)
-        print("playing \(url.lastPathComponent!)")
+        NSLog("playing \(url.lastPathComponent!)") //to file
+        print("playing \(url.lastPathComponent!)") //to console
         item = AVPlayerItem (URL: url)
         player = AVPlayer(playerItem: item)
         
@@ -198,8 +199,8 @@ class PlayVideoController : UIViewController, UINavigationControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         updateStarScore()
+             
     }
-    
     
     
     

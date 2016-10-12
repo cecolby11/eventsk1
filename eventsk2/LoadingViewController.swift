@@ -112,10 +112,13 @@ class LoadingViewController : UIViewController {
         super.viewDidLoad()
         coverBackgroundWhite()
         includeLogos()
+    
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         backgroundFadeIn()
     }
+    
+
 }
