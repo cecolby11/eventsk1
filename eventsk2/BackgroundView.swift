@@ -33,7 +33,7 @@ class BackgroundView: UIView {
         let bottomLeft = CGPoint(x: 0, y:self.bounds.height)
         
         
-        CGContextDrawLinearGradient(currentContext, gradient, topLeft, bottomLeft, [])
+        CGContextDrawLinearGradient(currentContext!, gradient!, topLeft, bottomLeft, [])
     }
     
 }
